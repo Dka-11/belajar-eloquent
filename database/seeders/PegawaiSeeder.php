@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PegawaiSeeder extends Seeder
 {
@@ -14,6 +16,13 @@ class PegawaiSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $faker = Faker::create('id_ID');
+
+        for ($i = 0; $i < 10; $i++) {
+            DB::table('pegawai')->insert([
+                'nama' => $faker->name,
+                'alamat' => $faker->address
+            ]);
+        }
     }
 }
