@@ -19,4 +19,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('/pegwai', 'PegawaiController@index');
+Route::get('/pegawai', 'PegawaiController@index');
